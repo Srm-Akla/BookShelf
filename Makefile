@@ -11,6 +11,11 @@ all: build
 build:
 	mkdir $(BUILD_DIR)
 
+user: 
+	$(CC)  src/user.cpp $(WARNING_FLAGS) $(CPP_FLAGS) $(LIBS) -o $(BUILD_DIR)/user
+gtk:
+	g++ src/gtk_basic.cpp -o simple `pkg-config gtkmm-4.0 --cflags --libs`
+
 run: 
 	./$(BUILD_DIR)/BookShelf
 

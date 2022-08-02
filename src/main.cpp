@@ -11,6 +11,7 @@ private:
     std::string author{};
     std::string publisher{};
     std::string title{};
+    std::string issue{};
     int page_number{}, price{};
     enum reading_status {Not_Started, Started, Dropped, Finished};
 
