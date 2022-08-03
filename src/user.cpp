@@ -34,6 +34,16 @@ void User::set_UserID(){
     user_id = mt();
 }
 
+class admin: private User {
+private:
+    bool admin = true;
+public:
+    void add_user(char *fname, char *lname);
+    void delete_user();
+    void add_book();
+    void delete_book();
+}
+
 int main(){
     User usr1;
     usr1.set_name("manga");
