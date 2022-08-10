@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <string>
+#include <fstream>
 
 class Book {
 private:
@@ -13,6 +14,7 @@ private:
     std::string issue{};
     int page_number{}, price{};
     enum reading_status {Not_Started, Started, Dropped, Finished};
+    std::string database{"Bookshelf.txt"};
 
 public:
     void get_all();
@@ -22,6 +24,8 @@ public:
     void set_title(std::string str){ title = str;}
     void set_price(short num){ price = num;}
     void set_page_number(short num){ page_number = num;}
+
+    void write_to_file();
 };
 
 void Book::set_all(){
@@ -41,3 +45,10 @@ void Book::get_all(){
     std::cout << "Page Number: " << page_number << '\n';
 }
 
+void Book::write_to_file(){
+    ofstream outfile;
+    outfile.open(database);
+    outfile << "Print some text" << '\n';
+    outfile.close();
+
+}
