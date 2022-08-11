@@ -19,9 +19,9 @@ private:
 public:
     void get_all();
     void set_all();
-    void set_author(std::string str){ author = str;}
-    void set_publisher(std::string str){ publisher = str;}
-    void set_title(std::string str){ title = str;}
+    void set_author(char *str){ author = str;}
+    void set_publisher(char *str){ publisher = str;}
+    void set_title(char *str){ title = str;}
     void set_price(short num){ price = num;}
     void set_page_number(short num){ page_number = num;}
 
@@ -48,7 +48,7 @@ void Book::get_all(){
 void Book::write_to_file(){
     ofstream outfile;
     outfile.open(database);
-    outfile << "Print some text" << '\n';
+    outfile << title << author << publisher << price <<  << '\n';
     outfile.close();
 
 }
